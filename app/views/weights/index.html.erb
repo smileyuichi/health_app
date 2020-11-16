@@ -1,0 +1,8 @@
+<%= Gon::Base.render_data %>
+
+<h1>Weights#index</h1>
+<p>Find me in app/views/weights/index.html.erb</p>
+<p class="mt-4">折れ線グラフが表示されていれば，「Chart.js」の導入はOKです</p>
+<canvas id="chart-weight"></canvas>
+
+<%= javascript_pack_tag 'weights/index' %>

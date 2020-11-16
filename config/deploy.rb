@@ -7,6 +7,20 @@ set :repo_url, "git@github.com:smileyuichi/health_app.git"
 append :linked_files, "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "node_modules"
 
+# bundle exec cap production deploy:seedコマンドでrails db:seedができる
+namespace :deploy do
+    desc 'Runs rake db:seed'
+    task seed: [:set_rails_env] do
+        on fetch(:migration_servers) do
+            within release_path do
+                with rails_env: fetch(:rails_env) do
+                    execute :rake, 'db:seed'
+                end
+            end
+        end
+    end
+end
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
