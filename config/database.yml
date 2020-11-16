@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: aws_sample_app_production
-  username: aws_sample_app
-  password: <%= ENV['AWS_SAMPLE_APP_DATABASE_PASSWORD'] %>
+  database: health_app_production
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
