@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## 構成図
+![health_app_infrastructure_diagram](https://user-images.githubusercontent.com/58574285/99364112-ed1c7e00-28f8-11eb-8b80-b83b37200860.png)
